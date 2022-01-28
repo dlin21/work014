@@ -1,12 +1,16 @@
 all: main.o
-	gcc -o main main.o
+	gcc -o program main.o
 
 main.o: main.c
 	gcc -c main.c
 
-clean:
-	rm -rf main.o
-	rm signals.txt
-	rm main
 run:
-	./main
+	./program
+
+clean:
+	rm *.o
+	rm program
+	rm *.txt
+
+comprun: all
+	./program
